@@ -1,0 +1,99 @@
+﻿GeneralSettingsCategoryName=기본 설정
+GeneralSettings_AggressiveTargetSearch=몹 공격적으로 인식
+GeneralSettings_AllowLoot=루팅
+GeneralSettings_IgnoreEnitityName=무시할 몹
+GeneralSettings_TotallyIgnoreEnitityName=완전히 무시할 몹
+
+ClassSettingsCategoryName=직업 설정
+ClassSettings_ChanterSettings=호법성
+ClassSettings_AethertechSettings=기갑성
+ClassSettings_AssassinSettings=살성
+ClassSettings_ClericSettings=치유성
+ClassSettings_GladiatorSettings=검성
+ClassSettings_GunslingerSettings=사격성
+ClassSettings_MageSettings=마법사
+ClassSettings_MuseSettings=예술가
+ClassSettings_PriestSettings=사제
+ClassSettings_RangerSettings=궁성
+ClassSettings_ScoutSettings=정찰자
+ClassSettings_SongweaverSettings=음유성
+ClassSettings_PainterSettings=채화성
+ClassSettings_SorcererSettings=마도성
+ClassSettings_SpiritmasterSettings=정령성
+ClassSettings_TechnistSettings=기술자
+ClassSettings_TemplarSettings=수호성
+ClassSettings_WarriorSettings=전사
+
+AionClassBaseSetting_LifePotionBelowPercentage=생명의 물약
+AionClassBaseSetting_LifeSerumPotionBelowPercentage=생명의 영약
+AionClassBaseSetting_LifeElixirPotionBelowPercentage=생명의 선약
+AionClassBaseSetting_LifePanaceaPotionBelowPercentage=생명의 비약
+AionClassBaseSetting_ManaPotionBelowPercentage=정신의 물약
+AionClassBaseSetting_ManaSerumPotionBelowPercentage=정신의 영약
+AionClassBaseSetting_ManaElixirPotionBelowPercentage=정신의 선약
+AionClassBaseSetting_ManaPanaceaPotionBelowPercentage=정신의 비약
+AionClassBaseSetting_PotionRecoveryBelowPercentage=회복의 물약
+AionClassBaseSetting_PotionSerumBelowPercentage=회복의 비약
+AionClassBaseSetting_ManaTreatmentBelowPercentage=정신력 회복
+AionClassBaseSetting_HerbTreatmentBelowPercentage=약초 치랴
+AionClassBaseSetting_UseWindSerum=바람의 비약
+AionClassBaseSetting_UseRallySerum=정수 사용
+AionClassBaseSetting_UseFocusAgent=정기 사용
+AionClassBaseSetting_UseScrollAttackSpeed=용기 주문서 사용
+AionClassBaseSetting_UseScrollCastingSpeed=각성 주문서 사용
+AionClassBaseSetting_UseScrollMovementSpeed=질주 주문서 사용
+AionClassBaseSetting_UseScrollCriticalStrike=치명타 주문서 사용
+AionClassBaseSetting_UseScrollCriticalSpell=마법 치명타 주문서 사용
+AionClassBaseSetting_RestHealth=HP% 이하 휴식
+AionClassBaseSetting_RestMana=MP% 이하 휴식
+AionClassBaseSetting_RestFlight=%초 이상 전투시 휴식
+AionClassBaseSetting_TargetSearchDistance=몹 검색 범위
+AionClassBaseSetting_AllowRemoveShock=충격 해제 사용
+
+
+AionClassBaseSetting_AllowWeaving=평캔 사용
+AionClassBaseSetting_AllowAOE=1대2 이상 사용 가능
+AionClassBaseSetting_StopWeavingBelowHPPercentage=HP% 이하시 평캔 사용중지
+AionClassBaseSetting_AllowPartyHealing=파티원 힐 사용
+AionClassBaseSetting_AllowPartyResurrection=파티원 부활 사용
+
+
+AionClassBaseSetting_Assassin_AllowAmbush=암습 사용
+
+AionClassBaseSetting_Chanter_AllowWoW=질풍의 주문 사용
+AionClassBaseSetting_Chanter_UseWordOfInspiration=고취의 주문 사용
+AionClassBaseSetting_Chanter_RecoveryMagicLowMP=MP < 마력 회복 사용
+AionClassBaseSetting_Chanter_HealingLightLowHP=치유의 빛 HP < 사용
+AionClassBaseSetting_Chanter_SaferWardLowHP=보호진 <  % 사용
+AionClassBaseSetting_Chanter_DivineCurtainLowHP=차단의 장막 < % 사용
+AionClassBaseSetting_Chanter_HealingBurstLowHP=쾌유의 손길 <% 사용
+AionClassBaseSetting_Chanter_RecoverySpellLowHP=쾌유의 주문 <% 사용
+AionClassBaseSetting_Chanter_MantraFirst=진언1
+AionClassBaseSetting_Chanter_MantraSecond=진언2
+AionClassBaseSetting_Chanter_MantraThird=진언3
+
+
+AionClassBaseSetting_Cleric_AllowHandOfReincarnation=환생의 손길 사용
+AionClassBaseSetting_Cleric_AllowPenance=고행 사용
+AionClassBaseSetting_Cleric_AllowSacrificalPower=파괴의 권능 사용
+AionClassBaseSetting_Cleric_SplendourOfRecoveryHPLow=쾌유의 광휘 < %
+AionClassBaseSetting_Cleric_SavingGraceLowHP=구원의 손길 <% 사용
+AionClassBaseSetting_Cleric_RadiantCureLowHP=치유의 은총 <% 사용
+AionClassBaseSetting_Cleric_LightOfRecovery=쾌유의 빛 <% 사용
+AionClassBaseSetting_Cleric_FlashOfRecovery=쾌유의 섬광 <% 사용
+AionClassBaseSetting_Cleric_SplendourOfRebirth=재생의 광휘 <% 사용
+AionClassBaseSetting_Cleric_RippleOfPurification=정화의 물결 <% 사용
+AionClassBaseSetting_Cleric_HealingLightLowHP=치유의 빛 <% 사용
+AionClassBaseSetting_Cleric_SummonHealingServantLowHP=치유의 기운 소환 <% 사용
+AionClassBaseSetting_Cleric_AllowSummerCircleBuff=따뜻한 가호
+AionClassBaseSetting_Cleric_AllowWinterCircleBuff=차가운 가호
+AionClassBaseSetting_Cleric_AllowSalvation_PandaemoniumsProtection=어둠의 가호
+
+AionClassBaseSetting_Ranger_AllowSharpenArrows=화살 강화 사용
+AionClassBaseSetting_Ranger_AllowFocusedShot=공격의 눈 사용
+AionClassBaseSetting_Ranger_SeizureArrowManaLow=탈취 화살 MP < % 미만 사용
+AionClassBaseSetting_Ranger_SeizureArrowHPLow=탈취 화살 HP < % 미만 사용
+AionClassBaseSetting_Ranger_AllowMauForm=라이칸 변신 사용
+
+AionClassBaseSetting_SpiritMaster_SpiritToSummoning=소환할 정령
+AionClassBaseSetting_SpiritMaster_AllowSandblaster=광역 침식 사용
