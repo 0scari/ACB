@@ -279,6 +279,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
             // HP recovery
+            if (entity.HealthPercentage < 100) {
             if (Game.Player.HealthPercentage < Settings.AbsorbVitalityLowHP)
             {
                 string absorbVitalitySkillName = "Absorb Vitality";
@@ -318,10 +319,14 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     return false;
                 }
             }
+
+              if (Game.Player.HealthPercentage < Settings.AbsorbVitalityLowHP || Game.Player.ManaPercentage < Settings.AbsorbVitalityLowHP) {
             if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Backdraft I"))
             {
                 AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Backdraft I");
                 return false;
+            }
+              }
             }
 
             // Pat heals + Sub
