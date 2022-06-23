@@ -56,7 +56,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
 
     public class Spiritmaster : AionClassBase
     {
-        private static readonly string[] dmg_skills = new string[] {            
+        private static readonly string[] dmg_skills = new string[] {
             // Summon Fire Energy
             "1792", // Summon Fire Energy IV - Asmodian
             "1749", // Summon Fire Energy III - Asmodian
@@ -98,7 +98,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             "2239", // Summon Water Energy III - Elyos
             "1783", // Summon Water Energy II - Elyos
             "1754", // Summon Water Energy I - Elyos
-            
+
             // Summon Wind Servant
             "1707", // Summon Wind Servant IV - Asmodian
             "1613", // Summon Wind Servant III - Asmodian
@@ -280,52 +280,52 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
 
             // HP recovery
             if (entity.HealthPercentage < 100) {
-            if (Game.Player.HealthPercentage < Settings.AbsorbVitalityLowHP)
-            {
-                string absorbVitalitySkillName = "Absorb Vitality";
-                if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " VII"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " VII");
-                    return false;
-                }
-                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " VI"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " VI");
-                    return false;
-                }
-                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " V"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " V");
-                    return false;
-                }
-                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " IV"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " IV");
-                    return false;
-                }
-                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " III"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " III");
-                    return false;
-                }
-                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " II"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " II");
-                    return false;
-                }
-                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " I"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " I");
-                    return false;
-                }
-            }
+              if (Game.Player.HealthPercentage < Settings.AbsorbVitalityLowHP)
+              {
+                  string absorbVitalitySkillName = "Absorb Vitality";
+                  if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " VII"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " VII");
+                      return false;
+                  }
+                  else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " VI"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " VI");
+                      return false;
+                  }
+                  else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " V"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " V");
+                      return false;
+                  }
+                  else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " IV"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " IV");
+                      return false;
+                  }
+                  else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " III"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " III");
+                      return false;
+                  }
+                  else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " II"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " II");
+                      return false;
+                  }
+                  else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(absorbVitalitySkillName + " I"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(absorbVitalitySkillName + " I");
+                      return false;
+                  }
+              }
 
               if (Game.Player.HealthPercentage < Settings.AbsorbVitalityLowHP || Game.Player.ManaPercentage < Settings.AbsorbVitalityLowHP) {
-            if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Backdraft I"))
-            {
-                AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Backdraft I");
-                return false;
-            }
+                  if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Backdraft I"))
+                  {
+                      AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Backdraft I");
+                      return false;
+                  }
               }
             }
 
@@ -480,11 +480,10 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
 
 
             // Fire Energy + Cyclone Combo
-            if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summoning Alacrity I")) {
+            if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summoning Alacrity I") && entity.HealthCurrent > 7000) {
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant I") || AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant II"))
                 {
                     AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Summoning Alacrity I");
-                    isEnergyCombo = true;
                     return false;
                 }
             }
@@ -660,7 +659,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            // Erosion 
+            // Erosion
             if (entity.StateList.GetList().Where(st => st.Value.Name_Eu.IndexOf("Erosion") >= 0).Any() == false && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Erosion I"))
             {
                 string erosionSkillName = "Erosion";
@@ -691,7 +690,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            if (HelperFunction.CheckAvailable("Cyclone of Wrath I")  && !isEnergyCombo) {
+            if (HelperFunction.CheckAvailable("Cyclone of Wrath I") && entity.HealthCurrent > 7000) {
                 HelperFunction.CheckExecute("Cyclone of Wrath I");
                 return false;
             }
