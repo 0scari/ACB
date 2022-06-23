@@ -121,29 +121,12 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             "Vacuum Choke III",
             "Vacuum Choke II",
             "Vacuum Choke I",
-
-            "Flame Bolt V",
-            "Flame Bolt IV",
-            "Flame Bolt III",
-            "Flame Bolt II",
-            "Flame Bolt I",
         };
 
         private static readonly string[] chain_skills = new string[]{
             "Stone Shock III",
             "Stone Shock II",
             "Stone Shock I",
-
-            // Ice Chain
-            "Frozen Shock I",
-
-
-            // Flame Bolt
-            "Blaze V",
-            "Blaze IV",
-            "Blaze III",
-            "Blaze II",
-            "Blaze I",
         };
 
         private static readonly string[] spirit_skills = new string[] {
