@@ -387,6 +387,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
 
                 // Recovery player MP
+                // TODO candidate for deletion
                 if (Game.Player.HealthPercentage > 50 && Game.Player.ManaMaximum - Game.Player.ManaCurrent > 3500)
                 {
                     string transparenceSkillName = "Transference";
