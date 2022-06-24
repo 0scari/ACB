@@ -377,7 +377,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            // Word of Quickness		
+            // Word of Quickness
             if (Game.Player.HealthPercentage < Settings.UseWordOfQuicknessLowHP)
             {
                 if (Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Word of Quickness I", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == false)
@@ -527,19 +527,9 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
-            // Word of inspiration
-            if (Settings.UseWordOfInspiration && Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Word of Inspiration", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == false)
-            {
-                if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Word of Inspiration I"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Word of Inspiration I");
-                    return false;
-                }
-            }
-
             uint healthRecharge = Game.Player.HealthMaximum - Game.Player.HealthCurrent;
 
-            // Stamina Restoration 
+            // Stamina Restoration
             if (healthRecharge > 2700)
             {
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Stamina Restoration IV"))
