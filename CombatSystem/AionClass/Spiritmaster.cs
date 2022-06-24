@@ -463,8 +463,8 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
 
 
             // Fire Energy + Cyclone Combo
-            if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summoning Alacrity I") && entity.HealthCurrent > 7000) {
-                if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant I") || AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant II"))
+            if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summoning Alacrity I") && entity.HealthCurrent > 8500) {
+                if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant II") || AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant IV"))
                 {
                     AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Summoning Alacrity I");
                     return false;
@@ -472,11 +472,8 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
             // Summon Cyclone Servant
-            if (Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Summoning Alacrity", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == true)
+            if (entity.HealthCurrent > 8500)
             {
-                if (isEnergyCombo) {
-                    isEnergyCombo = false;
-                }
                 if (Game.Player.IsElyos)
                 {
                     if (HelperFunction.CheckAvailable(2234))
@@ -673,7 +670,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            if (HelperFunction.CheckAvailable("Cyclone of Wrath I") && entity.HealthCurrent > 7000) {
+            if (HelperFunction.CheckAvailable("Cyclone of Wrath I") && entity.HealthCurrent > 8500) {
                 HelperFunction.CheckExecute("Cyclone of Wrath I");
                 return false;
             }
