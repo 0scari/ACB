@@ -412,7 +412,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
-            if (entity.HealthPercentage > 50)
+            if (entity.HealthCurrent > 8500)
             {
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Enfeebling Burst II"))
                 {
