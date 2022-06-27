@@ -463,7 +463,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
 
-            // Fire Energy + Cyclone Combo
+            // Wind Energy + Cyclone Combo
             if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summoning Alacrity I") && entity.HealthCurrent > 8500) {
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant II") || AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Summon Cyclone Servant IV"))
                 {
@@ -524,29 +524,29 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            // Fire Energy
+            // Wind/fire Energy
             if (Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Summoning Alacrity", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == true)
             {
                 if (Game.Player.IsElyos)
                 {
-                    if (HelperFunction.CheckAvailable(1792))
+                    if (HelperFunction.CheckAvailable(1706))
                     {
-                        HelperFunction.CheckExecute(1792);
+                        HelperFunction.CheckExecute(1706);
                         return false;
                     }
-                    else if (HelperFunction.CheckAvailable(1752))
+                    else if (HelperFunction.CheckAvailable(1647))
                     {
-                        HelperFunction.CheckExecute(1752);
+                        HelperFunction.CheckExecute(1647);
                         return false;
                     }
-                    else if (HelperFunction.CheckAvailable(1751))
+                    else if (HelperFunction.CheckAvailable(1646))
                     {
-                        HelperFunction.CheckExecute(1751);
+                        HelperFunction.CheckExecute(1646);
                         return false;
                     }
-                    else if (HelperFunction.CheckAvailable(1750))
+                    else if (HelperFunction.CheckAvailable(1645))
                     {
-                        HelperFunction.CheckExecute(1750);
+                        HelperFunction.CheckExecute(1645);
                         return false;
                     }
                 }
