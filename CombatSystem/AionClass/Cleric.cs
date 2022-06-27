@@ -371,13 +371,6 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
-
-            if (Game.Player.HealthPercentage < 75 && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Blessed Shield I"))
-            {
-                AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Blessed Shield I");
-                return false;
-            }
-
             // Sage's Wisdom I
             if (Game.Player.HealthPercentage< Settings.UseSagesWisdomHPPercentage&& AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(1102))
             {
@@ -907,6 +900,19 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
 
                 if (entity.HealthPercentage < Settings.RadiantCureLowHP)
                 {
+
+                    if (CheckAndExecuteSkills(entity, "Blessed Shield", 1))
+                    {
+                        return false;
+                    }
+                    if (CheckAndExecuteSkills(entity, "Prayer of Focus", 2))
+                    {
+                        return false;
+                    }
+                    if (CheckAndExecuteSkills(entity, "Amplification", 1))
+                    {
+                        return false;
+                    }
                     if (CheckAndExecuteSkills(entity, "Radiant Cure", 5))
                     {
                         return false;
