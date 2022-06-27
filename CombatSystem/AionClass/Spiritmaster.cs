@@ -887,8 +887,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
         /// <returns></returns>
         private bool CheckHeal(Entity entity)
         {
-            if (entity.ManaMaximum - entityMana.ManaCurrent >= 4000
-                && Game.Player.HealthPercentage >= 50) {
+            if (entity.ManaMaximum - entity.ManaCurrent >= 4000 && Game.Player.HealthPercentage >= 50) {
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Transference II"))
                 {
                     AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Transference II", entity);
