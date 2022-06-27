@@ -82,7 +82,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem
         public bool ExecutePauseActionOnlyInFight { get; set; }
         public ulong UsePauseHealDelayAfterLoot { get; set; }
 
-        // 
+        //
         public CombatSystemSettingBase Settings { get; set; }
         public AionClassBaseSetting ClassSettings { get; set; }
         private AionClassFactory AionClassCreator { get; set; }
@@ -102,7 +102,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem
 
             ExecutePauseActionOnlyInFight = false;
             UsePauseHealDelayAfterLoot = 0;
-            UseAntistuckLootBug = false;
+            UseAntistuckLootBug = true;
 
 
             RestingTimerDelay = 0;
@@ -305,7 +305,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem
                     //                                 System.Threading.Thread.Sleep(400);
                     //                             }
                     //                         }
-                    // 
+                    //
                     //                         Game.PlayerInput.Ability("Loot");
                     //                         System.Threading.Thread.Sleep(1000);
                     //                     }
@@ -395,7 +395,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem
                 float distToLootCorpse = Game.Player.Position.Distance(_lootLastPosition);
                 if (distToLootCorpse < 0.5f)
                 {
-                    // 
+                    //
                     if (Game.Player.CurrentSkillId != 0)
                     {
                         Game.WriteDebugMessage("I was Looting. We are using skill, skip.");
@@ -747,7 +747,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem
                         var playerSkillId = Game.Player.CurrentSkillId;
                         var skillInfo = Game.SkillList.GetSkill(playerSkillId);
 
-                        if ((skillInfo != null && playerSkillId != 0) || AionGame.UnknownFramework.Helper.SkillEffectList.WeAreUnderControl())// 
+                        if ((skillInfo != null && playerSkillId != 0) || AionGame.UnknownFramework.Helper.SkillEffectList.WeAreUnderControl())//
                         {
                             isValidTarget = true;
                             validTargetTime = DateTime.Now.AddSeconds(SkipTargetAfterSeconds);
