@@ -884,6 +884,9 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     if (CheckAndExecuteSkills(entity, "Blessed Shield", 1))
                     {
                         return false;
+                    } else {
+                        CheckAndExecuteSkills(entity, "Immortal Shroud", 1);
+                        return false;
                     }
                     if (CheckAndExecuteSkills(entity, "Prayer of Focus", 2))
                     {
