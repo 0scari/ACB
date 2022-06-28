@@ -177,9 +177,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
         private ulong CheckWorldOfWindTimer { get; set; }
         private ulong BuffCheckLastTimer { get; set; }
         private ChanterSettings Settings { get; set; }
+        private DateTime PerfectParryTimeout { get; set; }
 
         public Chanter() : this(new ChanterSettings())
         {
+            PerfectParryTimeout = DateTime.MinValue;
         }
 
         public Chanter(ChanterSettings settings)
@@ -189,6 +191,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             AttackStartedID = 0;
             CheckWorldOfWindTimer = 0;
             BuffCheckLastTimer = 0;
+            PerfectParryTimeout = DateTime.MinValue;
         }
 
 
@@ -293,6 +296,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
+            if (DateTime.Now < PerfectParryTimeout) {
+                System.Threading.Thread.Sleep(1000);
+                return false;
+            }
+
             if (Settings.AllowWeaving && WaitingAutoAttack())
                 return false;
 
@@ -321,6 +329,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(2288))
                     {
                         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(2288, null);
+                        PerfectParryTimeout = DateTime.Now.Add(new TimeSpan(0, 0, 3));
                         return false;
                     }
                 }
