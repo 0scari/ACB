@@ -339,31 +339,6 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
-            // Player only
-            //if (entity.HealthPercentage > 70)
-            //{
-            //    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Chain of Suffering IV"))
-            //    {
-            //        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Chain of Suffering IV");
-            //        return false;
-            //    }
-            //    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Chain of Suffering III"))
-            //    {
-            //        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Chain of Suffering III");
-            //        return false;
-            //    }
-            //    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Chain of Suffering II"))
-            //    {
-            //        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Chain of Suffering II");
-            //        return false;
-            //    }
-            //    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Chain of Suffering I"))
-            //    {
-            //        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Chain of Suffering I");
-            //        return false;
-            //    }
-            //}
-
             // Shield
             if (Game.Player.HealthPercentage < 40 && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Immortal Shroud I"))
             {
@@ -375,6 +350,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             if (Game.Player.HealthPercentage< Settings.UseSagesWisdomHPPercentage&& AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(1102))
             {
                 AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(1102);
+                return false;
+            }
+            if (Game.Player.HealthPercentage < Settings.UseSagesWisdomHPPercentage && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Grace of Empyrean Lord I"))
+            {
+                AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Grace of Empyrean Lord I");
                 return false;
             }
 
