@@ -184,36 +184,8 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
         private uint[] CureMindSkillId { get; set; }
         private uint[] DispelSkillId { get; set; }
 
-
         private string[] skillDamage = new string[]
         {
-            "1043", // Summon Noble Energy I - Elyos
-            "1044", // Summon Noble Energy I - Asmo
-            "2144", // Summon Noble Energy II - Elyos
-            "2145", // Summon Noble Energy II - Asmo
-
-            "1131", // "Summon Holy Servant IV", - Asmo
-            "1068", // "Summon Holy Servant III", - Asmo
-            "1067", // "Summon Holy Servant II", - Asmo
-            "1066", // "Summon Holy Servant I", - Asmo
-            
-            "1132", // "Summon Holy Servant IV", - Elyos
-            "1085", // "Summon Holy Servant III", - Elyos
-            "1084", // "Summon Holy Servant II", - Elyos
-            "1083", // "Summon Holy Servant I", - Elyos
-
-
-
-
-            "1181", // "Chastise II",
-            "1170", // "Chastise I",
-
-            "2140", // "Earth's Wrath V",
-            "1037", // "Earth's Wrath IV",
-            "1036", // "Earth's Wrath III",
-            "1035", // "Earth's Wrath II",
-            "1034", // "Earth's Wrath I",
-
             "1030", // "Punishing Earth I",
 
             "2147", // "Punishing Wind II",
@@ -231,6 +203,36 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             "977", // "Smite III",
             "976", // "Smite II",
             "975", // "Smite I",
+        };
+
+        private string[] skillServants = new string[]
+        {
+            "1043", // Summon Noble Energy I - Elyos
+            "1044", // Summon Noble Energy I - Asmo
+            "2144", // Summon Noble Energy II - Elyos
+            "2145", // Summon Noble Energy II - Asmo
+
+            "1131", // "Summon Holy Servant IV", - Asmo
+            "1068", // "Summon Holy Servant III", - Asmo
+            "1067", // "Summon Holy Servant II", - Asmo
+            "1066", // "Summon Holy Servant I", - Asmo
+
+            "1132", // "Summon Holy Servant IV", - Elyos
+            "1085", // "Summon Holy Servant III", - Elyos
+            "1084", // "Summon Holy Servant II", - Elyos
+            "1083", // "Summon Holy Servant I", - Elyos
+        };
+
+        private string[] skillDots = new string[]
+        {
+            "2140", // "Earth's Wrath V",
+            "1037", // "Earth's Wrath IV",
+            "1036", // "Earth's Wrath III",
+            "1035", // "Earth's Wrath II",
+            "1034", // "Earth's Wrath I",
+
+            "1181", // "Chastise II",
+            "1170", // "Chastise I",
         };
 
         private string[] skillChainDamage = new string[]
@@ -264,7 +266,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             this.Settings = settings;
             CurrentAionClass = eAionClass.Cleric;
 
-            // 
+            //
             StateDispelTime = DateTime.MinValue;
             StateArray = new Dictionary<uint, Dictionary<uint, int>>();
             StateUndispellable = new Dictionary<uint, DateTime>();
@@ -347,7 +349,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
             // Sage's Wisdom I
-            if (Game.Player.HealthPercentage< Settings.UseSagesWisdomHPPercentage&& AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(1102))
+            if (Game.Player.HealthPercentage < Settings.UseSagesWisdomHPPercentage && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(1102))
             {
                 AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(1102);
                 return false;
@@ -377,14 +379,13 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     return false;
                 }
             }
-           
 
-            if (entity.HealthPercentage > 60 && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Call Lightning I"))
-            {
-                AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Call Lightning I");
-                return false;
+            if (entity.HealthCurrent > 8500) {
+              if (ExecuteSkillFromList(entity, skillServants).Item1 == false)
+              {
+                  return false;
+              }
             }
-
             if (entity.HealthCurrent > 8500)
             {
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Enfeebling Burst II"))
@@ -397,6 +398,12 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Enfeebling Burst I");
                     return false;
                 }
+            }
+            if (entity.HealthCurrent > 5000) {
+              if (ExecuteSkillFromList(entity, skillDots).Item1 == false)
+              {
+                  return false;
+              }
             }
 
             if (distance < 4)
@@ -426,6 +433,12 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Hallowed Strike I");
                     return false;
                 }
+            }
+
+            if (entity.HealthCurrent > 5000 && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Call Lightning I"))
+            {
+                AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Call Lightning I");
+                return false;
             }
 
             if (ExecuteSkillFromList(entity, skillDamage).Item1 == false)
@@ -623,7 +636,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            // 
+            //
             if (Game.Player.HealthPercentage < 95 && Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Light of Rejuvenation", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == false
                     && Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Word of Revival", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == false)
             {
