@@ -104,6 +104,8 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
         [DisplayNameDynamic(ScriptDirectory, "AionClassBaseSetting_Chanter_MantraThird", "Mantra 3")]
         public ChanterMantraType MantraThird { get; set; }
 
+        [DisplayNameDynamic(ScriptDirectory, "AionClassBaseSetting_Chanter_Test", "TESTo")]
+        public ChanterMantraType Test { get; set; }
 
         [Browsable(false)]
         [DisplayNameDynamic(ScriptDirectory, "AionClassBaseSetting_Cleric_MasterName", "Master Name")]
