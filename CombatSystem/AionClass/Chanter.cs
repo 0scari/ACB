@@ -315,6 +315,52 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
             float entityDist = entity.Position.Distance(Game.Player.Position);
+
+            // Word of Protection
+            if (Game.Player.HealthPercentage <= 60 || Settings.UseWordOfProtection)
+            {
+                if (Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Word of Protection", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == false && AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Word of Protection I"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Word of Protection I");
+                    return false;
+                }
+            }
+
+            // Protective Ward
+            if (Game.Player.HealthPercentage < Settings.ProtectiveWardLowHP)
+            {
+                if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward VI"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward VI", null);
+                    return false;
+                }
+                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward V"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward V", null);
+                    return false;
+                }
+                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward IV"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward IV", null);
+                    return false;
+                }
+                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward III"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward III", null);
+                    return false;
+                }
+                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward II"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward II", null);
+                    return false;
+                }
+                else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward I"))
+                {
+                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward I", null);
+                    return false;
+                }
+            }
+
             if (entityDist < 6)
             {
                 // Focused Parry
@@ -325,47 +371,12 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
 
                 // Perfect Parry
-                if (Game.Player.HealthPercentage < Settings.PerfectParryLowHP)
+                if (Game.Player.HealthPercentage < Settings.PerfectParryLowHP && entity.HealthCurrent > 4000)
                 {
                     if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(2288))
                     {
                         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(2288, null);
                         PerfectParryTimeout = DateTime.Now.Add(new TimeSpan(0, 0, 3));
-                        return false;
-                    }
-                }
-
-                // Protective Ward
-                if (Game.Player.HealthPercentage < Settings.ProtectiveWardLowHP)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward VI"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward VI", null);
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward V"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward V", null);
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward IV"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward IV", null);
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward III", null);
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward II", null);
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protective Ward I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protective Ward I", null);
                         return false;
                     }
                 }
@@ -450,16 +461,6 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(1200);
                         return false;
                     }
-                }
-            }
-
-            // Word of Protection
-            if (Settings.UseWordOfProtection && Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Word of Protection", StringComparison.InvariantCultureIgnoreCase) >= 0).Any() == false)
-            {
-                if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Word of Protection I"))
-                {
-                    AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Word of Protection I");
-                    return false;
                 }
             }
 
