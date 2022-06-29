@@ -57,6 +57,17 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
     public class Spiritmaster : AionClassBase
     {
         private static readonly string[] dmg_skills = new string[] {
+            // Summon Wind Servant
+            "1707", // Summon Wind Servant IV - Asmodian
+            "1613", // Summon Wind Servant III - Asmodian
+            "1612", // Summon Wind Servant II - Asmodian
+            "1611", // Summon Wind Servant I - Asmodian
+
+            "1706", // Summon Wind Servant IV - Elyos
+            "1647", // Summon Wind Servant III - Elyos
+            "1646", // Summon Wind Servant II - Elyos
+            "1645", // Summon Wind Servant I - Elyos
+            
             // Summon Fire Energy
             "1792", // Summon Fire Energy IV - Asmodian
             "1749", // Summon Fire Energy III - Asmodian
@@ -98,17 +109,6 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             "2239", // Summon Water Energy III - Elyos
             "1783", // Summon Water Energy II - Elyos
             "1754", // Summon Water Energy I - Elyos
-
-            // Summon Wind Servant
-            "1707", // Summon Wind Servant IV - Asmodian
-            "1613", // Summon Wind Servant III - Asmodian
-            "1612", // Summon Wind Servant II - Asmodian
-            "1611", // Summon Wind Servant I - Asmodian
-
-            "1706", // Summon Wind Servant IV - Elyos
-            "1647", // Summon Wind Servant III - Elyos
-            "1646", // Summon Wind Servant II - Elyos
-            "1645", // Summon Wind Servant I - Elyos
 
             "Weaken Spirit IV",
             "Weaken Spirit III",
