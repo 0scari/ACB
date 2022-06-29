@@ -304,8 +304,6 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
-			ActivateMantras(true);
-
             if (Settings.AllowWeaving && WaitingAutoAttack())
                 return false;
 
@@ -686,7 +684,9 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-			ActivateMantras(false);
+			if (!ActivateMantras(true)) {
+				return false;
+			}
             return true;
         }
 
@@ -1192,6 +1192,8 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     }
                 }
             }
+
+			return true;
 
         }
 

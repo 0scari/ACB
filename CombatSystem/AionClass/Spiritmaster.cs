@@ -744,11 +744,6 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
         {
             if (Game.Player.ManaMaximum - Game.Player.ManaCurrent > 230)
             {
-                Game.PrintDebugMessages = true;
-                Game.WriteDebugMessage("WriteDebugMessage");
-                Game.WriteMessage("WriteMessage");
-                Game.BalloonMessage("BM title", "BM content");
-
                 string gainManaSkillName = "Absorb Energy";
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(gainManaSkillName + " I"))
                 {
