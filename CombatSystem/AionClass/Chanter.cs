@@ -303,11 +303,10 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 return false;
             }
 
+			ActivateMantras(true);
+
             if (Settings.AllowWeaving && WaitingAutoAttack())
                 return false;
-
-
-
 
             if (ExecuteSkillFromList(entity, chain_skills12).Item1 == false)
             {
@@ -685,226 +684,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            // Celerity Mantra
-            if (IsMantra(ChanterMantraType.CelerityMantra))
-            {
-                var celerityMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Celerity Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (celerityMantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Celerity Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Celerity Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Clement Mind Mantra
-            if (IsMantra(ChanterMantraType.ClementMindMantra))
-            {
-                var clementMindMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Clement Mind Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (clementMindMantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Clement Mind Mantra III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Clement Mind Mantra III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Clement Mind Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Clement Mind Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Clement Mind Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Clement Mind Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Hit Mantra
-            if (IsMantra(ChanterMantraType.HitMantra))
-            {
-                var hitMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Hit Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (hitMantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Hit Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Hit Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Intensity Mantra
-            if (IsMantra(ChanterMantraType.IntensityMantra))
-            {
-                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Intensity Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (mantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Intensity Mantra III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Intensity Mantra III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Intensity Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Intensity Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Intensity Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Intensity Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Invincibility Mantra
-            if (IsMantra(ChanterMantraType.InvincibilityMantra))
-            {
-                var invincibilityMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Invincibility Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (invincibilityMantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Invincibility Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Invincibility Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Protection Mantra
-            if (IsMantra(ChanterMantraType.ProtectionMantra))
-            {
-                var ProtectionMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Protection Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (ProtectionMantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protection Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protection Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protection Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protection Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Magic Mantra
-            if (IsMantra(ChanterMantraType.MagicMantra))
-            {
-                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Magic Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (mantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra IV"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra IV");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Revival Mantra
-            if (IsMantra(ChanterMantraType.RevivalMantra))
-            {
-                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Revival Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (mantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Revival Mantra III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Revival Mantra III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Revival Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Revival Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Revival Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Revival Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            // Shield Mantra
-            if (IsMantra(ChanterMantraType.ShieldMantra))
-            {
-                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Shield Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (mantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra IV"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra IV");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra I");
-                        return false;
-                    }
-                }
-            }
-
-            //Victory Mantra
-            if (IsMantra(ChanterMantraType.VictoryMantra))
-            {
-                var victoryMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Victory Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
-                if (victoryMantraState == false)
-                {
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra IV"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra IV");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra I");
-                        return false;
-                    }
-                }
-            }
-
+			ActivateMantras(false);
             return true;
         }
 
@@ -1187,6 +967,230 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
             return false;
+        }
+
+        private bool ActivateMantras(bool isAttack)
+        {
+            // Celerity Mantra
+            if (!isAttack || IsMantra(ChanterMantraType.CelerityMantra))
+            {
+                var celerityMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Celerity Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (celerityMantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Celerity Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Celerity Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Clement Mind Mantra
+            if (!isAttack || IsMantra(ChanterMantraType.ClementMindMantra))
+            {
+                var clementMindMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Clement Mind Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (clementMindMantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Clement Mind Mantra III"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Clement Mind Mantra III");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Clement Mind Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Clement Mind Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Clement Mind Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Clement Mind Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Hit Mantra
+            if (IsMantra(ChanterMantraType.HitMantra))
+            {
+                var hitMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Hit Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (hitMantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Hit Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Hit Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Intensity Mantra
+            if (IsMantra(ChanterMantraType.IntensityMantra))
+            {
+                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Intensity Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (mantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Intensity Mantra III"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Intensity Mantra III");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Intensity Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Intensity Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Intensity Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Intensity Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Invincibility Mantra
+            if (IsMantra(ChanterMantraType.InvincibilityMantra))
+            {
+                var invincibilityMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Invincibility Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (invincibilityMantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Invincibility Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Invincibility Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Protection Mantra
+            if (IsMantra(ChanterMantraType.ProtectionMantra))
+            {
+                var ProtectionMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Protection Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (ProtectionMantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protection Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protection Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Protection Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Protection Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Magic Mantra
+            if (IsMantra(ChanterMantraType.MagicMantra))
+            {
+                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Magic Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (mantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra IV"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra IV");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra III"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra III");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Magic Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Magic Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Revival Mantra
+            if (IsMantra(ChanterMantraType.RevivalMantra))
+            {
+                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Revival Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (mantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Revival Mantra III"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Revival Mantra III");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Revival Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Revival Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Revival Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Revival Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            // Shield Mantra
+            if (IsMantra(ChanterMantraType.ShieldMantra))
+            {
+                var mantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Shield Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (mantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra IV"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra IV");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra III"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra III");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Shield Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Shield Mantra I");
+                        return false;
+                    }
+                }
+            }
+
+            //Victory Mantra
+            if (IsMantra(ChanterMantraType.VictoryMantra))
+            {
+                var victoryMantraState = Game.Player.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Victory Mantra", StringComparison.InvariantCultureIgnoreCase) >= 0).Any();
+                if (victoryMantraState == false)
+                {
+                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra IV"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra IV");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra III"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra III");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra II"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra II");
+                        return false;
+                    }
+                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Victory Mantra I"))
+                    {
+                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Victory Mantra I");
+                        return false;
+                    }
+                }
+            }
+
         }
 
         public override bool NoGravityAntiStuck()
