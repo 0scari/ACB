@@ -299,7 +299,8 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
             }
 
             if (DateTime.Now < PerfectParryTimeout) {
-                System.Threading.Thread.Sleep(1000);
+                Game.PlayerInput.Console(Game.SkillCommand + Game.AttackChatCommand);
+                System.Threading.Thread.Sleep(500);
                 return false;
             }
 
@@ -331,7 +332,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(2288))
                     {
                         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(2288, null);
-                        PerfectParryTimeout = DateTime.Now.Add(new TimeSpan(0, 0, 3));
+                        PerfectParryTimeout = DateTime.Now.Add(new TimeSpan(0, 0, 2));
                         return false;
                     }
                 }
