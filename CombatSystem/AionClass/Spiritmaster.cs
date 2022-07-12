@@ -449,11 +449,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
 
                 // Dmg dot
-                //if (entity.HealthPercentage > 50 && HelperFunction.CheckAvailable("Spirit Erosion I"))
-                //{
-                //    HelperFunction.CheckExecute("Spirit Erosion I");
-                //    return false;
-                //}
+                if (entity.HealthPercentage > 50 && HelperFunction.CheckAvailable("Spirit Erosion I"))
+                {
+                    HelperFunction.CheckExecute("Spirit Erosion I");
+                    return false;
+                }
 
                 // Damage skill
                 if (ExecuteSkillFromList(entity, spirit_skills).Item1 == false)
