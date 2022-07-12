@@ -380,14 +380,18 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
             }
 
-            if (entity.HealthCurrent > 8500) {
+            if (entity.HealthCurrent > 10000) {
               if (ExecuteSkillFromList(entity, skillServants).Item1 == false)
               {
                   return false;
               }
             }
-            if (entity.HealthCurrent > 8500)
+            if (entity.HealthCurrent > 10000)
             {
+                if (CheckAndExecuteSkills(entity, "Amplification", 1))
+                {
+                    return false;
+                }
                 if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable("Enfeebling Burst II"))
                 {
                     AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute("Enfeebling Burst II");
@@ -399,7 +403,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                     return false;
                 }
             }
-            if (entity.HealthCurrent > 5000) {
+            if (entity.HealthCurrent > 6500) {
               if (ExecuteSkillFromList(entity, skillDots).Item1 == false)
               {
                   return false;
