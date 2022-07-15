@@ -485,6 +485,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem
                 Include.PotionHelper.CheckManaSerum();
             }
 
+            if (Game.Player.ManaPercentage < ClassSettings.ManaPanaceaPotionBelowPercentage)
+            {
+                Include.PotionHelper.CheckDivineManaSerum();
+            }
+
             // Elixir
             if (Game.Player.HealthPercentage < ClassSettings.LifeElixirPotionBelowPercentage)
             {

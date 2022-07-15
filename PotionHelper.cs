@@ -201,7 +201,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include
             ManaSerum.Add(new PotionItemInfo() { Name_EU = "Mana Serum", Name_RU = "", Name_KR = "", TypeId = 162000019, Level = 30, HP = 0, MP = 1170 });
             ManaSerum.Add(new PotionItemInfo() { Name_EU = "Lesser Mana Serum", Name_RU = "", Name_KR = "", TypeId = 162000018, Level = 20, HP = 0, MP = 980 });
             ManaSerum.Add(new PotionItemInfo("Minor Mana Serum", "", "", 162000017, 10, 0, 590));
-
+            
+            // Divine Mana Serum
+            DivineManaSerum = new List<PotionItemInfo>();
+            DivineManaSerum.Add(new PotionItemInfo() { Name_EU = "Divine Mana Serum", Name_RU = "", Name_KR = "", TypeId = 162000021, Level = 50, HP = 0, MP = 1870 });
+            
 
             // Panacea
             PanaceaOfLife = new List<PotionItemInfo>();
@@ -251,6 +255,7 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include
             HP_MP_PotionTypeIdListToCheckCooldown.AddRange(LifePotions.Select(s => s.TypeId));
             HP_MP_PotionTypeIdListToCheckCooldown.AddRange(LifeElixirPotions.Select(s => s.TypeId));
             HP_MP_PotionTypeIdListToCheckCooldown.AddRange(ManaPotions.Select(s => s.TypeId));
+            HP_MP_PotionTypeIdListToCheckCooldown.AddRange(DivineManaPotions.Select(s => s.TypeId));
             HP_MP_PotionTypeIdListToCheckCooldown.AddRange(ManaElixirPotions.Select(s => s.TypeId));
             HP_MP_PotionTypeIdListToCheckCooldown.AddRange(LifeSerum.Select(s => s.TypeId));
             HP_MP_PotionTypeIdListToCheckCooldown.AddRange(ManaSerum.Select(s => s.TypeId));
@@ -287,7 +292,11 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include
             return CheckPotion(ManaSerum);
         }
 
-
+        public static bool CheckDivineManaSerum()
+        {
+            return CheckPotion(DivineManaSerum);
+        }
+        
         public static bool CheckLifeElixir()
         {
             return CheckPotion(LifeElixirPotions);
