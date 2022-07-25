@@ -404,35 +404,35 @@ namespace AionBotnet.ScriptLibrary.AionClassic.Include.CombatSystem.AionClass
                 }
 
                 // DP Buff
-                if (Game.Player.DP > 2000 && entitySpirit.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Spirit Armor of Light") >= 0).Any() == false && entitySpirit.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Spirit Armor of Darkness") >= 0).Any() == false)
-                {
-                    string spiritArmorDpSkillName = "Spirit Armor of Light";
-                    if (Game.Player.IsAsmodian)
-                    {
-                        spiritArmorDpSkillName = "Spirit Armor of Darkness";
-                    }
-
-                    if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " IV"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " IV");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " III"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " III");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " II"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " II");
-                        return false;
-                    }
-                    else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " I"))
-                    {
-                        AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " I");
-                        return false;
-                    }
-                }
+               // if (Game.Player.DP > 2000 && entitySpirit.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Spirit Armor of Light") >= 0).Any() == false && entitySpirit.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Spirit Armor of Darkness") >= 0).Any() == false)
+               // {
+               //     string spiritArmorDpSkillName = "Spirit Armor of Light";
+               //     if (Game.Player.IsAsmodian)
+               //     {
+               //         spiritArmorDpSkillName = "Spirit Armor of Darkness";
+               //     }
+//
+               //     if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " IV"))
+               //     {
+               //         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " IV");
+               //         return false;
+               //     }
+               //     else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " III"))
+               //     {
+               //         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " III");
+               //         return false;
+               //     }
+               //     else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " II"))
+               //     {
+               //         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " II");
+               //         return false;
+               //     }
+               //     else if (AionGame.UnknownFramework.Helper.HelperFunction.CheckAvailable(spiritArmorDpSkillName + " I"))
+               //     {
+               //         AionGame.UnknownFramework.Helper.HelperFunction.CheckExecute(spiritArmorDpSkillName + " I");
+               //         return false;
+               //     }
+               // }
 
                 // Spirit Buff : Armor Spirit
                 if (entitySpirit.StateList.GetList().Where(s => s.Value.Name_Eu.IndexOf("Armor Spirit") >= 0).Any() == false && HelperFunction.CheckAvailable("Armor Spirit I"))
